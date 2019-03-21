@@ -8,8 +8,7 @@ defmodule Banking.Model.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-      # Starts a worker by calling: Banking.Model.Worker.start_link(arg)
-      # {Banking.Model.Worker, arg}
+      Banking.Model.Repo
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
