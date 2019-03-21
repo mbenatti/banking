@@ -28,7 +28,9 @@ defmodule Banking.Model.MixProject do
     [
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.0.0"},
-      {:decimal, "~> 1.7"}
+      {:decimal, "~> 1.7"},
+      {:comeonin, "~> 5.1"},
+      {:argon2_elixir, "~> 2.0"},
     ]
   end
 end
