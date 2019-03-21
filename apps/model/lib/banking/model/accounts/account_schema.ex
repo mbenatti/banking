@@ -53,7 +53,6 @@ defmodule Banking.Model.Accounts.AccountSchema do
         valid?: false
       >
 
-
   """
   @spec changeset(t(), Map.t()) :: Changeset.t()
   def changeset(account \\ __MODULE__, params \\ %{}) do
