@@ -33,6 +33,43 @@ defmodule Banking.Model.Accounts.AccountLoader do
   end
 
   @doc """
+  Get all accounts
+
+  ## Examples
+
+      iex> AccountLoader.get_all()
+      [
+        %Banking.Model.Accounts.AccountSchema{
+          __meta__: #Ecto.Schema.Metadata<:loaded, "accounts">,
+          email: "marcos@email.com",
+          id: 1,
+          inserted_at: ~N[2019-03-21 22:52:56],
+          name: "Marcos",
+          password: nil,
+          updated_at: ~N[2019-03-21 22:52:56]
+        },
+        %Banking.Model.Accounts.AccountSchema{
+          __meta__: #Ecto.Schema.Metadata<:loaded, "accounts">,
+          email: "marcos2@email.com",
+          id: 4,
+          inserted_at: ~N[2019-03-21 23:15:51],
+          name: "Marcos",
+          password: "$argon2id$v=19$m=131072,t=8,p=4$QcllWjHSmhOfwyZMdSIBMA$uhTIarDAULVx9ZcytwGzbbGWZKmZnIHi30tEnLSSiqk",
+          updated_at: ~N[2019-03-21 23:15:51]
+        }
+      ]
+
+    iex> AccountLoader.get_all()
+    []
+
+  """
+  @spec get_all() :: [AccountSchema.t()] | []
+  def get_all() do
+    AccountQueries.all()
+    |> Repo.all()
+  end
+
+  @doc """
   Get an Account by email
 
   ## Examples
