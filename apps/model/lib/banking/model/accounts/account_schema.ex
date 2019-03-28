@@ -60,6 +60,7 @@ defmodule Banking.Model.Accounts.AccountSchema do
     |> cast(params, @required)
     |> validate_required(@required)
     |> validate_format(:email, ~r/@/)
+    |> validate_length(:password, min: 8, max: 70)
     |> unique_constraint(:email)
     |> put_password_hash()
   end
