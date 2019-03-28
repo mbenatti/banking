@@ -10,8 +10,10 @@ defmodule Banking.Model.MixProject do
       deps_path: "../../deps",
       lockfile: "../../mix.lock",
       elixir: "~> 1.8",
+      elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      aliases: aliases()
     ]
   end
 
@@ -23,6 +25,9 @@ defmodule Banking.Model.MixProject do
     ]
   end
 
+  defp elixirc_paths(:test), do: ["lib", "test/support", "test/factories"]
+  defp elixirc_paths(_), do: ["lib"]
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
@@ -30,7 +35,18 @@ defmodule Banking.Model.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:decimal, "~> 1.7"},
       {:comeonin, "~> 5.1"},
-      {:argon2_elixir, "~> 2.0"}
+      {:argon2_elixir, "~> 2.0"},
+      # Tests
+      {:ex_machina, "~> 2.2", only: :test},
+      {:faker, "~> 0.12.0", only: :test}
+    ]
+  end
+
+  defp aliases do
+    [
+      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
+      "ecto.reset": ["ecto.drop", "ecto.setup"],
+      test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
 end
