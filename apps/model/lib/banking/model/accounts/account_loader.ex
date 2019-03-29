@@ -63,8 +63,8 @@ defmodule Banking.Model.Accounts.AccountLoader do
     []
 
   """
-  @spec get_all() :: [AccountSchema.t()] | []
-  def get_all() do
+  @spec get_all :: [AccountSchema.t()] | []
+  def get_all do
     AccountQueries.all()
     |> Repo.all()
   end

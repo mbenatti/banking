@@ -31,7 +31,7 @@ defmodule Banking.Model.Accounts.AccountLoaderTest do
   describe("get_all/2") do
     test "retrieve accounts" do
       insert_list(2, :account)
-      
+
       accounts = AccountLoader.get_all()
 
       assert Enum.count(accounts) == 2
