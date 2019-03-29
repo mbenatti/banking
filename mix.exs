@@ -5,6 +5,8 @@ defmodule Banking.MixProject do
     [
       apps_path: "apps",
       start_permanent: Mix.env() == :prod,
+      preferred_cli_env: [coveralls: :test, "coveralls.detail": :test, "coveralls.post": :test, "coveralls.html": :test],
+      test_coverage: [tool: ExCoveralls],
       deps: deps()
     ]
   end
