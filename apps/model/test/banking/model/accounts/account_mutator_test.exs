@@ -1,5 +1,5 @@
 defmodule Banking.Model.Accounts.AccountMutatorTest do
-  @moduledoc"""
+  @moduledoc """
   Tests for write operations on account
   """
   use Banking.Model.DataCase

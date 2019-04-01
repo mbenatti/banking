@@ -1,5 +1,5 @@
 defmodule Banking.Model.Accounts.AccountLoaderTest do
-  @moduledoc"""
+  @moduledoc """
   Tests for read operations on account
   """
   use Banking.Model.DataCase

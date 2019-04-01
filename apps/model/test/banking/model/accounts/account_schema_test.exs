@@ -1,5 +1,5 @@
 defmodule Banking.Model.Accounts.AccountSchemaTest do
-  @moduledoc"""
+  @moduledoc """
   Tests validating the schema changeset
   """
   use Banking.Model.DataCase, async: true
