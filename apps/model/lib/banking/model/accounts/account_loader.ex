@@ -86,7 +86,7 @@ defmodule Banking.Model.Accounts.AccountLoader do
       }
 
   """
-  @spec get(String.t()) :: AccountSchema.t() | nil
+  @spec get_by_email(String.t()) :: AccountSchema.t() | nil
   def get_by_email(email) do
     email
     |> AccountQueries.get_by_email()
