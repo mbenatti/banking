@@ -3,6 +3,8 @@ defmodule Banking.APIWeb.ErrorHelpers do
   Conveniences for translating and building error messages.
   """
 
+  alias Ecto.Changeset
+
   @doc """
   Translates an error message using gettext.
   """
@@ -29,5 +31,12 @@ defmodule Banking.APIWeb.ErrorHelpers do
     else
       Gettext.dgettext(Banking.APIWeb.Gettext, "errors", msg, opts)
     end
+  end
+
+  @doc """
+  Helper to parse the changeset errors
+  """
+  def translate_changeset_errors(changeset) do
+    Changeset.traverse_errors(changeset, &translate_error/1)
   end
 end
