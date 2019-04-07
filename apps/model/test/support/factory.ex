@@ -7,4 +7,5 @@ defmodule Banking.Model.Factory do
 
   use Banking.Model.AccountFactory
   use Banking.Model.BalanceEventFactory
+  use Banking.Model.TradeFactory
 end
