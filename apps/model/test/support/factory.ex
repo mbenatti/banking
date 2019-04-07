@@ -6,4 +6,5 @@ defmodule Banking.Model.Factory do
   use ExMachina.Ecto, repo: Banking.Model.Repo
 
   use Banking.Model.AccountFactory
+  use Banking.Model.BalanceEventFactory
 end
