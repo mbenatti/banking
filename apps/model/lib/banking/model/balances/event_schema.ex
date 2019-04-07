@@ -16,6 +16,7 @@ defmodule Banking.Model.Balances.EventSchema do
   alias Banking.Model.Accounts.AccountSchema
   alias Banking.Model.Enums.BankOperationEnum.Type
   alias Banking.Model.Repo
+  alias Banking.Model.Balances.EventLoader
 
   import Ecto.Changeset
 
@@ -69,6 +70,7 @@ defmodule Banking.Model.Balances.EventSchema do
     |> cast(params, @required ++ @optional)
     |> validate_required(@required)
     |> validate_number(:quantity_moved, greater_than_or_equal_to: 0)
+    |> Type.validate(:type, message: "Invalid operation Type")
     |> do_changeset
   end
 
@@ -79,7 +81,7 @@ defmodule Banking.Model.Balances.EventSchema do
   defp do_changeset(changeset) do
     parent =
       changeset
-      |> get_field(:parent_id)
+      |> get_field(:account_id)
       |> get_parent()
 
     type = get_field(changeset, :type)
@@ -93,8 +95,7 @@ defmodule Banking.Model.Balances.EventSchema do
     |> validate_number(:balance, greater_than_or_equal_to: 0)
   end
 
-  defp get_parent(nil), do: nil
-  defp get_parent(id), do: Repo.get(__MODULE__, id)
+  defp get_parent(id), do: EventLoader.get_last_event_by_account(id)
 
   defp get_parent_balance(%__MODULE__{balance: balance}), do: balance
   defp get_parent_balance(_), do: 0
