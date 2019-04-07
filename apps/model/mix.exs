@@ -36,6 +36,8 @@ defmodule Banking.Model.MixProject do
       {:decimal, "~> 1.7"},
       {:comeonin, "~> 5.1"},
       {:argon2_elixir, "~> 2.0"},
+      {:enum_type, "~> 1.0"},
+      {:timex, "~> 3.5"},
       # Tests
       {:ex_machina, "~> 2.2", only: :test},
       {:faker, "~> 0.12.0", only: :test}
