@@ -20,13 +20,13 @@ defmodule Banking.Model.Balances.EventQueries do
 
       iex> EventQueries.get_last_by_account_id(2)
       #Ecto.Query<from e0 in Banking.Model.Balances.EventSchema,
-      where: e0.account_id == ^2, order_by: [desc: e0.inserted_at], limit: 1>
+      where: e0.account_id == ^2, order_by: [desc: e0.id], limit: 1>
 
   """
   @spec get_last_by_account_id(Integer.t()) :: Query.t()
   def get_last_by_account_id(account_id) do
     all()
     |> where([a], a.account_id == ^account_id)
-    |> last(:inserted_at)
+    |> last()
   end
 end
