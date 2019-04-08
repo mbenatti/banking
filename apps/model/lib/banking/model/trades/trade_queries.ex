@@ -41,6 +41,7 @@ defmodule Banking.Model.Trades.TradeQueries do
         quantity: b_event.quantity_moved,
         type: b_event.type,
         date: b_event.inserted_at,
+        balance: b_event.balance,
         trade: trade
       },
       where: trade.account_id == ^account_id,

@@ -12,6 +12,7 @@ defmodule Banking.Model.Trades.TradeLoader do
           %{
             type: BankOperationEnum.t(),
             quantity: Decimal.t(),
+            balance: Decimal.t(),
             date: NaiveDateTime.t(),
             trade: TradeSchema.t()
           }
