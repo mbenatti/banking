@@ -11,6 +11,19 @@ defmodule Banking.APIWeb.FallbackController do
     |> render("error.json", changeset: changeset)
   end
 
+  def call(conn, {:error, msg}) when is_bitstring(msg) do
+    conn
+    |> put_view(ErrorView)
+    |> render("error.json", message: msg)
+  end
+
+  def call(conn, {:error, :invalid_request}) do
+    conn
+    |> put_status(:unprocessable_entity)
+    |> put_view(ErrorView)
+    |> render("error.json", message: "Invalid request, please verify the request params")
+  end
+
   def call(conn, {:error, :not_found}) do
     invalid_login_reply(conn)
   end
