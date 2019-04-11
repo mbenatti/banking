@@ -42,7 +42,9 @@ defmodule Banking.API.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:guardian, "~> 1.2"},
-      {:accounts, in_umbrella: true}
+      {:basic_auth, "~> 2.2.2"},
+      {:accounts, in_umbrella: true},
+      {:backoffice, in_umbrella: true}
     ]
   end
 end

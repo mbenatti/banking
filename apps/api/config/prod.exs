@@ -14,3 +14,10 @@ config :api, Banking.APIWeb.Guardian,
 
 # Do not print debug messages in production
 config :logger, level: :info
+
+config :api,
+  backoffice_auth: [
+    username: {:system, "BASIC_AUTH_USERNAME"},
+    password: {:system, "BASIC_AUTH_PASSWORD"},
+    realm: {:system, "BASIC_AUTH_REALM"}
+  ]
