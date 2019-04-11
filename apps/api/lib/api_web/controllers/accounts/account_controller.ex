@@ -1,6 +1,8 @@
 defmodule Banking.APIWeb.AccountController do
   @moduledoc """
   Routes implementation for Account
+
+  see `create/2`
   """
 
   use Banking.APIWeb, :controller
@@ -15,7 +17,7 @@ defmodule Banking.APIWeb.AccountController do
 
   ## Parameters
 
-    -- conn: The connectio
+    -- conn: The connection
     -- params: The params provided by user containing the name, username(email) and password
   """
   @spec create(Conn.t(), Map.t()) :: Plug.Conn.t()
