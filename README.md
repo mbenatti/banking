@@ -1,4 +1,1 @@
-# Banking
-
-**TODO: Add description**
-
+[![CircleCI](https://circleci.com/gh/mbenatti/banking/tree/master.svg?style=svg)](https://circleci.com/gh/mbenatti/banking/tree/master)
