@@ -10,11 +10,13 @@ defmodule Banking.Accounts.Transactions.Withdrawal do
   see `create/2`
   """
 
+  alias Banking.Model.Accounts.AccountLoader
   alias Banking.Model.Balances.EventMutator
-  alias Banking.Model.Trades.{TradeSchema, TradeMutator}
   alias Banking.Model.Enums.BankOperationEnum.Type
-  alias Ecto.Changeset
+  alias Banking.Model.Trades.{TradeSchema, TradeMutator}
   alias Banking.Model.Repo
+  alias Banking.Email.WithdrawalEmail
+  alias Ecto.Changeset
 
   @doc """
   Build and write The Withdrawal on Database,
@@ -43,7 +45,9 @@ defmodule Banking.Accounts.Transactions.Withdrawal do
                    balance_event_id: event.id
                  },
                  event.type
-               ) do
+               ),
+             acc when not is_nil(acc) <- AccountLoader.get(event.account_id),
+             {:ok, _} <- WithdrawalEmail.email(acc.email, event.quantity_moved) do
           {:ok, trade}
         else
           err -> Repo.rollback(err)
