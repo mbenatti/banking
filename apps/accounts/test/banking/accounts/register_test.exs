@@ -2,6 +2,7 @@ defmodule Banking.Accounts.RegisterTest do
   use Banking.Model.DataCase
 
   alias Banking.Accounts.Register
+  alias Banking.Accounts.Transactions.Statement
 
   describe "create/1" do
     test "with valid attributes" do
@@ -11,9 +12,24 @@ defmodule Banking.Accounts.RegisterTest do
         email: Faker.Internet.email()
       }
 
-      {:ok, client} = Register.create(params)
+      {:ok, account} = Register.create(params)
 
-      refute client.id == nil
+      refute account.id == nil
+    end
+
+    test "with initial deposit" do
+      params = %{
+        name: Faker.Name.PtBr.name(),
+        password: Faker.UUID.v4(),
+        email: Faker.Internet.email()
+      }
+
+      {:ok, account} = Register.create(params)
+      %{balance: balance} = Statement.get_balance(account.id)
+
+      refute account.id == nil
+
+      assert balance == get_register_deposit()
     end
 
     test "with invalid attributes" do
@@ -28,5 +44,12 @@ defmodule Banking.Accounts.RegisterTest do
                name: {"can't be blank", [validation: :required]}
              ]
     end
+  end
+
+  defp get_register_deposit() do
+    :accounts
+    |> Application.get_env(:register_deposit)
+    |> Decimal.new()
+    |> Decimal.add(Decimal.new("0.0000"))
   end
 end
