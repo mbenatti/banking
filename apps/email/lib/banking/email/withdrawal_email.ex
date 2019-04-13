@@ -11,6 +11,8 @@ defmodule Banking.Email.WithdrawalEmail do
 
   alias Banking.Email.Mailer
 
+  require Logger
+
   @doc """
   Build an email and delivery
 
@@ -60,9 +62,15 @@ defmodule Banking.Email.WithdrawalEmail do
   end
 
   defp send_later(email) do
+    log_send(email.to, email.text_body)
+
     email = Mailer.deliver_later(email)
 
     {:ok, email}
+  end
+
+  defp log_send(to, content) do
+    Logger.info("Sending Withdrawal email to #{to}, content: #{content}")
   end
 
   defp get_email_from() do
