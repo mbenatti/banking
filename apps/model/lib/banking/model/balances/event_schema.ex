@@ -15,7 +15,6 @@ defmodule Banking.Model.Balances.EventSchema do
 
   alias Banking.Model.Accounts.AccountSchema
   alias Banking.Model.Enums.BankOperationEnum.Type
-  alias Banking.Model.Repo
   alias Banking.Model.Balances.EventLoader
 
   import Ecto.Changeset
