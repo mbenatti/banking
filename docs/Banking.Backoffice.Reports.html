@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.19.3">
+    <title>Banking.Backoffice.Reports — banking vdev</title>
+    <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
+    <script src="dist/sidebar_items-253b5ff8ba.js"></script>
+    <script async src="dist/html-399e30b9b028e3059575.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+    <div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  <a href="https://github.com/mbenatti/" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+banking      </h1>
+      <h2 class="sidebar-projectVersion">
+        vdev
+      </h2>
+    </div>
+      <img src="assets/logo.png" alt="banking" class="sidebar-projectImage">
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">banking vdev</small>
+Banking.Backoffice.Reports        
+          <a href="https://github.com/mbenatti/blob/master/apps/backoffice/lib/banking/backoffice/reports.ex#L1" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+      </h1>
+
+
+        <section id="moduledoc">
+<p>The &#39;Business Logic&#39; for reports on backoffice</p>
+<p>Aggregates all Reports operations calling the respective function on <a href="Banking.Model.Trades.TradeLoader.html"><code class="inline">Banking.Model.Trades.TradeLoader</code></a></p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#daily/0">daily()</a>
+  </div>
+    <div class="summary-synopsis"><p>Daily report containing a list with maps like the example above</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#monthly/0">monthly()</a>
+  </div>
+    <div class="summary-synopsis"><p>Monthly report containing a list with maps like the example above</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#total/0">total()</a>
+  </div>
+    <div class="summary-synopsis"><p>Yearly report containing a  Map like the example above</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#yearly/0">yearly()</a>
+  </div>
+    <div class="summary-synopsis"><p>Yearly report containing a list with maps like the example above</p>
+</div>
+</div>
+  </div>
+        </section>
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="daily/0">
+    <div class="detail-header">
+    <a href="#daily/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">daily()</span>
+      <a href="https://github.com/mbenatti/blob/master/apps/backoffice/lib/banking/backoffice/reports.ex#L25" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>daily() :: [<a href="Banking.Model.Trades.TradeLoader.html#t:t_day_report/0">Banking.Model.Trades.TradeLoader.t_day_report</a>()] | []</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>Daily report containing a list with maps like the example above:</p>
+<pre><code class="nohighlight makeup elixir"><span class="p" data-group-id="7406022476-1">[</span><span class="p" data-group-id="7406022476-2">%{</span><span class="w">
+  </span><span class="ss">day_date</span><span class="p">:</span><span class="w"> </span><span class="ld">~N[2019-04-06 00:00:00.000000]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">deposit_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7406022476-3">#</span><span class="nc" data-group-id="7406022476-3">Decimal</span><span class="p" data-group-id="7406022476-3">&lt;</span><span class="mf">240000.0000</span><span class="p" data-group-id="7406022476-3">&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">transfer_issued_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7406022476-4">#</span><span class="nc" data-group-id="7406022476-4">Decimal</span><span class="p" data-group-id="7406022476-4">&lt;</span><span class="o">-</span><span class="mf">21000.0000</span><span class="p" data-group-id="7406022476-4">&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">transfer_received_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7406022476-5">#</span><span class="nc" data-group-id="7406022476-5">Decimal</span><span class="p" data-group-id="7406022476-5">&lt;</span><span class="mf">21000.0000</span><span class="p" data-group-id="7406022476-5">&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">withdrawal_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7406022476-6">#</span><span class="nc" data-group-id="7406022476-6">Decimal</span><span class="p" data-group-id="7406022476-6">&lt;</span><span class="o">-</span><span class="mf">151000.0000</span><span class="p" data-group-id="7406022476-6">&gt;</span><span class="w">
+</span><span class="p" data-group-id="7406022476-2">}</span><span class="p" data-group-id="7406022476-1">]</span></code></pre>
+<p>see <a href="Banking.Model.Trades.TradeLoader.html#get_report_by_day/0"><code class="inline">Banking.Model.Trades.TradeLoader.get_report_by_day/0</code></a>
+see <a href="Banking.APIWeb.BackofficeController.html"><code class="inline">Banking.APIWeb.BackofficeController</code></a> for more information</p>
+  </section>
+</section>
+<section class="detail" id="monthly/0">
+    <div class="detail-header">
+    <a href="#monthly/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">monthly()</span>
+      <a href="https://github.com/mbenatti/blob/master/apps/backoffice/lib/banking/backoffice/reports.ex#L44" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>monthly() :: [<a href="Banking.Model.Trades.TradeLoader.html#t:t_month_report/0">Banking.Model.Trades.TradeLoader.t_month_report</a>()] | []</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>Monthly report containing a list with maps like the example above:</p>
+<pre><code class="nohighlight makeup elixir"><span class="p" data-group-id="7536062825-1">[</span><span class="p" data-group-id="7536062825-2">%{</span><span class="w">
+  </span><span class="ss">month_date</span><span class="p">:</span><span class="w"> </span><span class="ld">~N[2019-03-01 00:00:00.000000]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">deposit_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7536062825-3">#</span><span class="nc" data-group-id="7536062825-3">Decimal</span><span class="p" data-group-id="7536062825-3">&lt;</span><span class="mf">240000.0000</span><span class="p" data-group-id="7536062825-3">&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">transfer_issued_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7536062825-4">#</span><span class="nc" data-group-id="7536062825-4">Decimal</span><span class="p" data-group-id="7536062825-4">&lt;</span><span class="o">-</span><span class="mf">21000.0000</span><span class="p" data-group-id="7536062825-4">&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">transfer_received_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7536062825-5">#</span><span class="nc" data-group-id="7536062825-5">Decimal</span><span class="p" data-group-id="7536062825-5">&lt;</span><span class="mf">21000.0000</span><span class="p" data-group-id="7536062825-5">&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">withdrawal_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7536062825-6">#</span><span class="nc" data-group-id="7536062825-6">Decimal</span><span class="p" data-group-id="7536062825-6">&lt;</span><span class="o">-</span><span class="mf">151000.0000</span><span class="p" data-group-id="7536062825-6">&gt;</span><span class="w">
+</span><span class="p" data-group-id="7536062825-2">}</span><span class="p" data-group-id="7536062825-1">]</span></code></pre>
+<p>see <a href="Banking.Model.Trades.TradeLoader.html#get_report_by_month/0"><code class="inline">Banking.Model.Trades.TradeLoader.get_report_by_month/0</code></a>
+see <a href="Banking.APIWeb.BackofficeController.html"><code class="inline">Banking.APIWeb.BackofficeController</code></a> for more information</p>
+  </section>
+</section>
+<section class="detail" id="total/0">
+    <div class="detail-header">
+    <a href="#total/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">total()</span>
+      <a href="https://github.com/mbenatti/blob/master/apps/backoffice/lib/banking/backoffice/reports.ex#L81" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>total() :: <a href="Banking.Model.Trades.TradeLoader.html#t:t_total/0">Banking.Model.Trades.TradeLoader.t_total</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>Yearly report containing a  Map like the example above:</p>
+<pre><code class="nohighlight makeup elixir"><span class="p" data-group-id="5163959370-1">%{</span><span class="w">
+</span><span class="ss">deposit_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5163959370-2">#</span><span class="nc" data-group-id="5163959370-2">Decimal</span><span class="p" data-group-id="5163959370-2">&lt;</span><span class="mf">240000.0000</span><span class="p" data-group-id="5163959370-2">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="ss">transfer_issued_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5163959370-3">#</span><span class="nc" data-group-id="5163959370-3">Decimal</span><span class="p" data-group-id="5163959370-3">&lt;</span><span class="o">-</span><span class="mf">21000.0000</span><span class="p" data-group-id="5163959370-3">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="ss">transfer_received_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5163959370-4">#</span><span class="nc" data-group-id="5163959370-4">Decimal</span><span class="p" data-group-id="5163959370-4">&lt;</span><span class="mf">21000.0000</span><span class="p" data-group-id="5163959370-4">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="ss">withdrawal_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5163959370-5">#</span><span class="nc" data-group-id="5163959370-5">Decimal</span><span class="p" data-group-id="5163959370-5">&lt;</span><span class="o">-</span><span class="mf">151000.0000</span><span class="p" data-group-id="5163959370-5">&gt;</span><span class="w">
+</span><span class="p" data-group-id="5163959370-1">}</span></code></pre>
+<p>see <a href="Banking.Model.Trades.TradeLoader.html#get_report_total/0"><code class="inline">Banking.Model.Trades.TradeLoader.get_report_total/0</code></a>
+see <a href="Banking.APIWeb.BackofficeController.html"><code class="inline">Banking.APIWeb.BackofficeController</code></a> for more information</p>
+  </section>
+</section>
+<section class="detail" id="yearly/0">
+    <div class="detail-header">
+    <a href="#yearly/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">yearly()</span>
+      <a href="https://github.com/mbenatti/blob/master/apps/backoffice/lib/banking/backoffice/reports.ex#L63" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>yearly() :: [<a href="Banking.Model.Trades.TradeLoader.html#t:t_year_report/0">Banking.Model.Trades.TradeLoader.t_year_report</a>()] | []</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>Yearly report containing a list with maps like the example above:</p>
+<pre><code class="nohighlight makeup elixir"><span class="p" data-group-id="2764322331-1">[</span><span class="p" data-group-id="2764322331-2">%{</span><span class="w">
+  </span><span class="ss">year_date</span><span class="p">:</span><span class="w"> </span><span class="ld">~N[2018-01-01 00:00:00.000000]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">deposit_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2764322331-3">#</span><span class="nc" data-group-id="2764322331-3">Decimal</span><span class="p" data-group-id="2764322331-3">&lt;</span><span class="mf">240000.0000</span><span class="p" data-group-id="2764322331-3">&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">transfer_issued_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2764322331-4">#</span><span class="nc" data-group-id="2764322331-4">Decimal</span><span class="p" data-group-id="2764322331-4">&lt;</span><span class="o">-</span><span class="mf">21000.0000</span><span class="p" data-group-id="2764322331-4">&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">transfer_received_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2764322331-5">#</span><span class="nc" data-group-id="2764322331-5">Decimal</span><span class="p" data-group-id="2764322331-5">&lt;</span><span class="mf">21000.0000</span><span class="p" data-group-id="2764322331-5">&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">withdrawal_amount</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2764322331-6">#</span><span class="nc" data-group-id="2764322331-6">Decimal</span><span class="p" data-group-id="2764322331-6">&lt;</span><span class="o">-</span><span class="mf">151000.0000</span><span class="p" data-group-id="2764322331-6">&gt;</span><span class="w">
+</span><span class="p" data-group-id="2764322331-2">}</span><span class="p" data-group-id="2764322331-1">]</span></code></pre>
+<p>see <a href="Banking.Model.Trades.TradeLoader.html#get_report_by_month/0"><code class="inline">Banking.Model.Trades.TradeLoader.get_report_by_month/0</code></a>
+see <a href="Banking.APIWeb.BackofficeController.html"><code class="inline">Banking.APIWeb.BackofficeController</code></a> for more information</p>
+  </section>
+</section>
+          </div>
+        </section>
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.3),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  
+  </body>
+</html>
+

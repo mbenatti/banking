@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.19.3">
+    <title>Banking.Model.Accounts.AccountSchema — banking vdev</title>
+    <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
+    <script src="dist/sidebar_items-253b5ff8ba.js"></script>
+    <script async src="dist/html-399e30b9b028e3059575.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+    <div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  <a href="https://github.com/mbenatti/" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+banking      </h1>
+      <h2 class="sidebar-projectVersion">
+        vdev
+      </h2>
+    </div>
+      <img src="assets/logo.png" alt="banking" class="sidebar-projectImage">
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">banking vdev</small>
+Banking.Model.Accounts.AccountSchema        
+          <a href="https://github.com/mbenatti/blob/master/apps/model/lib/banking/model/accounts/account_schema.ex#L1" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+      </h1>
+
+
+        <section id="moduledoc">
+<p>A Client Account</p>
+<p>This is the abstraction of client account on Bank, define their schema and changeset validation.
+Represented on database as <code class="inline">accounts</code> table.</p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:t/0">t()</a>
+  </div>
+    <div class="summary-synopsis"><p>The <a href="#content"><code class="inline">Banking.Model.Accounts.AccountSchema</code></a> struct</p>
+</div>
+</div>
+  </div>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#changeset/2">changeset(account \\ __MODULE__, params \\ %{})</a>
+  </div>
+    <div class="summary-synopsis"><p>Changeset for an account</p>
+</div>
+</div>
+  </div>
+        </section>
+
+        <section id="types" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#types">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Types          </h1>
+          <div class="types-list">
+<section class="detail" id="t:t/0">
+    <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">t()</span>
+      <a href="https://github.com/mbenatti/blob/master/apps/model/lib/banking/model/accounts/account_schema.ex#L16" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>t() :: %Banking.Model.Accounts.AccountSchema{
+  __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  email: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  inserted_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  name: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  password: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  updated_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>The <a href="#content"><code class="inline">Banking.Model.Accounts.AccountSchema</code></a> struct.</p>
+  </section>
+</section>
+          </div>
+        </section>
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="changeset/2">
+  
+    <span id="changeset/0"></span>
+
+    <span id="changeset/1"></span>
+  <div class="detail-header">
+    <a href="#changeset/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">changeset(account \\ __MODULE__, params \\ %{})</span>
+      <a href="https://github.com/mbenatti/blob/master/apps/model/lib/banking/model/accounts/account_schema.ex#L58" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>changeset(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/Map.html#t:t/0">Map.t</a>()) :: Changeset.t()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>Changeset for an account</p>
+<h2 id="changeset/2-examples" class="section-heading">
+  <a href="#changeset/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="kn">alias</span><span class="w"> </span><span class="nc">Banking.Model.Accounts.AccountSchema</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">AccountSchema</span><span class="o">.</span><span class="n">changeset</span><span class="w"> </span><span class="p" data-group-id="0605294344-1">%</span><span class="nc" data-group-id="0605294344-1">AccountSchema</span><span class="p" data-group-id="0605294344-1">{</span><span class="p" data-group-id="0605294344-1">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0605294344-2">%{</span><span class="ss">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Marcos&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">email</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;marcos@email.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;123456&quot;</span><span class="p" data-group-id="0605294344-2">}</span><span class="w">
+</span><span class="p" data-group-id="0605294344-3">#</span><span class="nc" data-group-id="0605294344-3">Ecto.Changeset</span><span class="p" data-group-id="0605294344-3">&lt;</span><span class="w">
+  </span><span class="ss">action</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w">
+  </span><span class="ss">changes</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0605294344-4">%{</span><span class="w">
+    </span><span class="ss">email</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;marcos@email.com&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="ss">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Marcos&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;$argon2id$v=19$m=131072,t=8,p=4$Bqrd4z4KZnk3Z9yJfoc0nQ$xs0/du78YpMWDoj11T5cNgT1KCCYEdFzwjSiXNDYkAg&quot;</span><span class="w">
+  </span><span class="p" data-group-id="0605294344-4">}</span><span class="p">,</span><span class="w">
+  </span><span class="ss">errors</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0605294344-5">[</span><span class="p" data-group-id="0605294344-5">]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0605294344-6">#</span><span class="nc" data-group-id="0605294344-6">Banking.Model.Accounts.AccountSchema</span><span class="p" data-group-id="0605294344-6">&lt;</span><span class="p" data-group-id="0605294344-6">&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="n">valid?</span><span class="p">:</span><span class="w"> </span><span class="no">true</span><span class="w">
+</span><span class="p" data-group-id="0605294344-3">&gt;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">AccountSchema</span><span class="o">.</span><span class="n">changeset</span><span class="w"> </span><span class="p" data-group-id="0605294344-7">%</span><span class="nc" data-group-id="0605294344-7">AccountSchema</span><span class="p" data-group-id="0605294344-7">{</span><span class="p" data-group-id="0605294344-7">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0605294344-8">%{</span><span class="ss">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Marcos&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">email</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;marcos@email.com&quot;</span><span class="p" data-group-id="0605294344-8">}</span><span class="w">
+</span><span class="p" data-group-id="0605294344-9">#</span><span class="nc" data-group-id="0605294344-9">Ecto.Changeset</span><span class="p" data-group-id="0605294344-9">&lt;</span><span class="w">
+  </span><span class="ss">action</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w">
+  </span><span class="ss">changes</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0605294344-10">%{</span><span class="ss">email</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;marcos@email.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Marcos&quot;</span><span class="p" data-group-id="0605294344-10">}</span><span class="p">,</span><span class="w">
+  </span><span class="ss">errors</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0605294344-11">[</span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0605294344-12">{</span><span class="s">&quot;can&#39;t be blank&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0605294344-13">[</span><span class="ss">validation</span><span class="p">:</span><span class="w"> </span><span class="ss">:required</span><span class="p" data-group-id="0605294344-13">]</span><span class="p" data-group-id="0605294344-12">}</span><span class="p" data-group-id="0605294344-11">]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0605294344-14">#</span><span class="nc" data-group-id="0605294344-14">Banking.Model.Accounts.AccountSchema</span><span class="p" data-group-id="0605294344-14">&lt;</span><span class="p" data-group-id="0605294344-14">&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="n">valid?</span><span class="p">:</span><span class="w"> </span><span class="no">false</span><span class="w">
+</span><span class="p" data-group-id="0605294344-9">&gt;</span></code></pre>
+  </section>
+</section>
+          </div>
+        </section>
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.3),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  
+  </body>
+</html>
+

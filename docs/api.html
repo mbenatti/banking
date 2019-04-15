@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.19.3">
+    <title>API — banking vdev</title>
+    <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
+    <script src="dist/sidebar_items-253b5ff8ba.js"></script>
+    <script async src="dist/html-399e30b9b028e3059575.js"></script>
+    
+  </head>
+  <body data-type="extras">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+<div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  <a href="https://github.com/mbenatti/" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+banking      </h1>
+      <h2 class="sidebar-projectVersion">
+        vdev
+      </h2>
+    </div>
+      <img src="assets/logo.png" alt="banking" class="sidebar-projectImage">
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+<h1>API</h1>
+<p>The API was built using the <a href="https://hexdocs.pm/phoenix/1.4.2/Phoenix.html"><code class="inline">Phoenix</code></a> Framework and is a place to receive request&#39;s and 
+expose routes for our service.</p>
+<p>The <code class="inline">API</code> app does not contains any logic about operations, all logic is delegated to <code class="inline">accounts</code> or <code class="inline">backoffice</code> project,
+it has one purpose to expose routes, handle request/resposes/errors and authentication</p>
+<h1>Main Features</h1>
+<ul>
+<li><a href="https://hexdocs.pm/guardian/1.2.1/Guardian.html"><code class="inline">Guardian</code></a> for bank account authentication <a href="https://hexdocs.pm/basic_auth/2.2.4/BasicAuth.html"><code class="inline">BasicAuth</code></a> for backoffice Authentication
+</li>
+<li><a href="https://hexdocs.pm/plug/1.7.2/Plug.html"><code class="inline">Plug</code></a> for build composable modules for authentication and others, used on Routes
+</li>
+<li>All Errors are centralized on a <a href="https://hexdocs.pm/api/0.1.0/Banking.APIWeb.FallbackController.html"><code class="inline">Banking.APIWeb.FallbackController</code></a> module, using <a href="https://hexdocs.pm/phoenix/1.4.2/Phoenix.Controller.html#action_fallback/1"><code class="inline">Phoenix.Controller.action_fallback/1</code></a> feature
+</li>
+</ul>
+<h2 id="resources" class="section-heading">
+  <a href="#resources" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Resources
+</h2>
+
+<ul>
+<li><a href="https://github.com/ueberauth/guardian">Guardian</a> is a token based authentication library for use with Elixir applications.
+</li>
+<li><a href="https://github.com/elixir-plug/plug">Plug</a> is a specification and conveniences for composable modules between web applications
+</li>
+</ul>
+<h3 id="accounts-auth" class="section-heading">
+  <a href="#accounts-auth" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Accounts auth
+</h3>
+
+<p>The account authentication is powered by <a href="https://hexdocs.pm/guardian/1.2.1/Guardian.html"><code class="inline">Guardian</code></a>. </p>
+<p>In any case the user send their ID to handle their own operations, 
+all operations use the current assigned <code class="inline">id</code> on the <code class="inline">Plug.Connection</code> provided 
+by features implemented on this project:</p>
+<ul>
+<li>A <a href="https://hexdocs.pm/plug/1.7.2/Plug.html"><code class="inline">Plug</code></a> to ensure authentication on the <code class="inline">API</code>, ref: <a href="Banking.APIWeb.Pipeline.Auth.html"><code class="inline">Banking.APIWeb.Pipeline.Auth</code></a>
+</li>
+<li>A <a href="https://hexdocs.pm/plug/1.7.2/Plug.html"><code class="inline">Plug</code></a> to load and assign the current client to the <code class="inline">Plug.Connection</code>, ref: <a href="Banking.APIWeb.Plugs.CurrentClient.html"><code class="inline">Banking.APIWeb.Plugs.CurrentClient</code></a>
+</li>
+</ul>
+<h3 id="backoffice-auth" class="section-heading">
+  <a href="#backoffice-auth" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Backoffice auth
+</h3>
+
+<p>The backoffice authentication is powered by <a href="https://hexdocs.pm/basic_auth/2.2.4/BasicAuth.html"><code class="inline">BasicAuth</code></a> the default user/password is:</p>
+<pre><code class="nohighlight makeup elixir"><span class="n">admin</span><span class="o">/</span><span class="n">admin</span><span class="o">.</span><span class="n">p4ss</span></code></pre>
+<h2 id="avaliable-routes" class="section-heading">
+  <a href="#avaliable-routes" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Avaliable routes
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="w">        </span><span class="n">account_path</span><span class="w">  </span><span class="nc">POST</span><span class="w">  </span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">registration</span><span class="w">          </span><span class="nc">Banking.APIWeb.AccountController</span><span class="w"> </span><span class="ss">:create</span><span class="w">
+             </span><span class="n">auth_path</span><span class="w">  </span><span class="nc">POST</span><span class="w">  </span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">auth</span><span class="w">                  </span><span class="nc">Banking.APIWeb.AuthController</span><span class="w"> </span><span class="ss">:create</span><span class="w">
+</span><span class="n">transaction_path</span><span class="w">  </span><span class="nc">POST</span><span class="w">  </span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">priv</span><span class="o">/</span><span class="n">deposit</span><span class="w">          </span><span class="nc">Banking.APIWeb.TransactionController</span><span class="w"> </span><span class="ss">:deposit</span><span class="w">
+</span><span class="n">transaction_path</span><span class="w">  </span><span class="nc">POST</span><span class="w">  </span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">priv</span><span class="o">/</span><span class="n">withdrawal</span><span class="w">       </span><span class="nc">Banking.APIWeb.TransactionController</span><span class="w"> </span><span class="ss">:withdrawal</span><span class="w">
+</span><span class="n">transaction_path</span><span class="w">  </span><span class="nc">POST</span><span class="w">  </span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">priv</span><span class="o">/</span><span class="n">transfer</span><span class="w">         </span><span class="nc">Banking.APIWeb.TransactionController</span><span class="w"> </span><span class="ss">:transfer</span><span class="w">
+</span><span class="n">transaction_path</span><span class="w">  </span><span class="nc">GET</span><span class="w">   </span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">priv</span><span class="o">/</span><span class="n">balance</span><span class="w">          </span><span class="nc">Banking.APIWeb.TransactionController</span><span class="w"> </span><span class="ss">:balance</span><span class="w">
+</span><span class="n">transaction_path</span><span class="w">  </span><span class="nc">GET</span><span class="w">   </span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">priv</span><span class="o">/</span><span class="n">statement</span><span class="w">        </span><span class="nc">Banking.APIWeb.TransactionController</span><span class="w"> </span><span class="ss">:statement</span><span class="w">
+ </span><span class="n">backoffice_path</span><span class="w">  </span><span class="nc">GET</span><span class="w">   </span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">admin</span><span class="o">/</span><span class="n">report</span><span class="o">/</span><span class="n">daily</span><span class="w">    </span><span class="nc">Banking.APIWeb.BackofficeController</span><span class="w"> </span><span class="ss">:daily_report</span><span class="w">
+ </span><span class="n">backoffice_path</span><span class="w">  </span><span class="nc">GET</span><span class="w">   </span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">admin</span><span class="o">/</span><span class="n">report</span><span class="o">/</span><span class="n">monthly</span><span class="w">  </span><span class="nc">Banking.APIWeb.BackofficeController</span><span class="w"> </span><span class="ss">:monthly_report</span><span class="w">
+ </span><span class="n">backoffice_path</span><span class="w">  </span><span class="nc">GET</span><span class="w">   </span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">admin</span><span class="o">/</span><span class="n">report</span><span class="o">/</span><span class="n">yearly</span><span class="w">   </span><span class="nc">Banking.APIWeb.BackofficeController</span><span class="w"> </span><span class="ss">:yearly_report</span><span class="w">
+ </span><span class="n">backoffice_path</span><span class="w">  </span><span class="nc">GET</span><span class="w">   </span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">admin</span><span class="o">/</span><span class="n">report</span><span class="o">/</span><span class="n">total</span><span class="w">    </span><span class="nc">Banking.APIWeb.BackofficeController</span><span class="w"> </span><span class="ss">:total_report</span></code></pre>
+<h3 id="tips-examples-for-testing-routes-with-command-line" class="section-heading">
+  <a href="#tips-examples-for-testing-routes-with-command-line" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Tips/Examples for testing routes with command line
+</h3>
+
+<ul>
+<li>For these examples I used <code class="inline">httpie</code>
+ see <a href="https://httpie.org/">https://httpie.org/</a>
+</li>
+</ul>
+<h4>User Bank Account</h4>
+<ol>
+<li>Show the routes
+</li>
+</ol>
+<pre><code class="shell">$ mix phx.routes Banking.APIWeb.Router</code></pre>
+<ol start="2">
+<li>Creating an user
+</li>
+</ol>
+<pre><code class="shell">
+$ http post localhost:4000/api/registration name=Marcos email=marcos@email.com password=12345678</code></pre>
+<ol start="3">
+<li>Auth (get a token for the others operations)
+</li>
+</ol>
+<pre><code class="shell">$ http post localhost:4000/api/auth username=marcos@email.com password=12345678             </code></pre>
+<ol start="4">
+<li>Deposit 
+</li>
+</ol>
+<pre><code class="shell">$ http post localhost:4000/api/priv/deposit amount=1.000.000 &#39;Authorization:Bearer &lt;YOUR-TOKEN-HERE&gt;&#39;</code></pre>
+<ol start="5">
+<li>Withdrawal
+</li>
+</ol>
+<pre><code class="shell">$ http post localhost:4000/api/priv/withdrawal amount=200.000,00 &#39;Authorization:Bearer &lt;YOUR-TOKEN-HERE&gt;&#39;</code></pre>
+<ol start="6">
+<li>Transfer (account for transference must be created first)
+</li>
+</ol>
+<pre><code class="shell">$ http post localhost:4000/api/priv/transfer amount=300.000,00 username=marcos2@email.com &#39;Authorization:Bearer &lt;YOUR-TOKEN-HERE&gt;&#39;</code></pre>
+<ol start="7">
+<li>Balance
+</li>
+</ol>
+<pre><code class="shell">$ http get localhost:4000/api/priv/balance  &#39;Authorization:Bearer &lt;YOUR-TOKEN-HERE&gt;&#39;</code></pre>
+<ol start="8">
+<li>Statement
+</li>
+</ol>
+<pre><code class="shell">$ http get localhost:4000/api/priv/statement  &#39;Authorization:Bearer &lt;YOUR-TOKEN-HERE&gt;&#39;</code></pre>
+<h4>Admin Reports</h4>
+<ol>
+<li>Daily report
+</li>
+</ol>
+<pre><code class="shell">$ http  get admin:admin.p4ss@localhost:4000/api/admin/report/daily</code></pre>
+<ol start="2">
+<li>Monthly report
+</li>
+</ol>
+<pre><code class="shell">$ http  get admin:admin.p4ss@localhost:4000/api/admin/report/monthly</code></pre>
+<ol start="3">
+<li>Yearly report
+</li>
+</ol>
+<pre><code class="shell">$ http  get admin:admin.p4ss@localhost:4000/api/admin/report/yearly</code></pre>
+<ol start="4">
+<li>Total report
+</li>
+</ol>
+<pre><code class="shell">$ http  get admin:admin.p4ss@localhost:4000/api/admin/report/total</code></pre>
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.3),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  
+  </body>
+</html>
+

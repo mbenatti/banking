@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.19.3">
+    <title>Banking Overview — banking vdev</title>
+    <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
+    <script src="dist/sidebar_items-253b5ff8ba.js"></script>
+    <script async src="dist/html-399e30b9b028e3059575.js"></script>
+    
+  </head>
+  <body data-type="extras">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+<div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  <a href="https://github.com/mbenatti/" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+banking      </h1>
+      <h2 class="sidebar-projectVersion">
+        vdev
+      </h2>
+    </div>
+      <img src="assets/logo.png" alt="banking" class="sidebar-projectImage">
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+<h1>Banking Overview</h1>
+<p><a href="https://circleci.com/gh/mbenatti/banking/tree/master"><img src="https://circleci.com/gh/mbenatti/banking/tree/master.svg?style=svg" alt="CircleCI"/></a></p>
+<p>Banking is a project that was built to test my skills, and a opportunity to use and test the latest dependencies(or packages) 
+on Elixir ecosystem.</p>
+<p>The project consists of a Banking Account service, accept the creation of accounts, deposit, withdrawal among other features 
+as described on <code class="inline">Features</code> section.</p>
+<p>The project was created under a Elixir Umbrella application, using <a href="https://www.postgresql.org/">Postgres</a> to store the balance events, accounts and transactions,
+with <a href="https://phoenixframework.org/">Phoenix</a> providing the Rest API structure and <a href="https://www.docker.com/">Docker</a> as a container that can be used on development.</p>
+<h2 id="features" class="section-heading">
+  <a href="#features" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Features
+</h2>
+
+<ul>
+<li>Authentication 
+</li>
+<li><p>Account Operations</p>
+<ul>
+<li>Account Creation
+</li>
+<li>Deposit, Withdrawal and Transference between accounts
+</li>
+<li>Statement and Balance
+</li>
+</ul>
+</li>
+<li><p>Back Office Operations</p>
+<ul>
+<li>Daily, Monthly, Yearly and Total report (for Back Office)
+</li>
+</ul>
+</li>
+<li>Email service integration
+</li>
+<li>Error and Logging service integration
+</li>
+<li>Continuous Integration
+</li>
+<li>Docker image for development
+</li>
+</ul>
+<h2 id="requirements" class="section-heading">
+  <a href="#requirements" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Requirements
+</h2>
+
+<ul>
+<li>Erlang/OTP 21 [erts-10.3]+
+</li>
+<li>Elixir 1.8.1+ (compiled with OTP 21)
+</li>
+<li>PostgreSQL 10.7+
+</li>
+</ul>
+<p>(not tested on OTP 20 or others versions of elixir, but should work fine using the latest versions)</p>
+<h2 id="main-dependencies" class="section-heading">
+  <a href="#main-dependencies" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Main Dependencies
+</h2>
+
+<ul>
+<li><a href="https://hexdocs.pm/guardian/1.2.1/Guardian.html"><code class="inline">Guardian</code></a> (for accounts) and <a href="https://hexdocs.pm/basic_auth/2.2.4/BasicAuth.html"><code class="inline">BasicAuth</code></a> (for backoffice) authentication
+</li>
+<li><a href="https://hexdocs.pm/phoenix/1.4.2/Phoenix.html"><code class="inline">Phoenix</code></a> for the <code class="inline">api</code> <code class="inline">api.md</code> <code class="inline">api.html</code>
+</li>
+<li><a href="https://hexdocs.pm/timber/3.1.2/Timber.html"><code class="inline">Timber</code></a> for error and logging service
+</li>
+<li><a href="https://hexdocs.pm/ecto/3.0.7/Ecto.html"><code class="inline">Ecto</code></a> for database wrapper
+</li>
+<li><a href="https://hexdocs.pm/bamboo/1.2.0/Bamboo.html"><code class="inline">Bamboo</code></a> for email service
+</li>
+<li><a href="https://circleci.com">Circle CI</a> for continuous integration
+</li>
+</ul>
+<h2 id="project-structure" class="section-heading">
+  <a href="#project-structure" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Project Structure
+</h2>
+
+<p>The project was created using umbrella and consist into 5 apps with distinct&#39;s functions</p>
+<ul>
+<li><p>Model</p>
+<p>Contains the database operations like read and write, the schema definitions, database migrations, changeset 
+with validations and logic for change of the balance</p>
+</li>
+<li><p>Accounts</p>
+<p>Logic segregation of bank account and their operations,
+serves as a bridge between the API and Model</p>
+</li>
+<li><p>Backoffice</p>
+<p>Logic segregation of Back office and their operations,
+serves as a bridge between the API and Model</p>
+</li>
+<li><p>Email</p>
+<p>Email Service Integration and email implementation</p>
+</li>
+<li><p>API</p>
+<p>The Rest API, it calls functions from Accounts and Backoffice apps and not deal directly with Model or Email</p>
+</li>
+</ul>
+<h2 id="unit-tests" class="section-heading">
+  <a href="#unit-tests" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Unit Tests
+</h2>
+
+<p>The test&#39;s are made using <a href="https://hexdocs.pm/ex_unit/ExUnit.html">Ex_Unit</a>, also useful libraries like <code class="inline">Faker</code> and <code class="inline">ExMachina</code></p>
+<h2 id="development-tips-setup" class="section-heading">
+  <a href="#development-tips-setup" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Development tips / Setup
+</h2>
+
+<ol>
+<li>Install dependencies
+</li>
+</ol>
+<pre><code class="shell">$ mix deps.get</code></pre>
+<ol start="2">
+<li>Setup database (creation &amp; migrations)
+</li>
+</ol>
+<pre><code class="shell">$ mix ecto.create
+$ mix ecto.migrate</code></pre>
+<ol start="3">
+<li>Run application
+</li>
+</ol>
+<pre><code class="shell">$ mix phx.server</code></pre>
+<ol start="4">
+<li>Application are running on localhost:4000
+</li>
+</ol>
+<h2 id="setup-containerized-with-docker" class="section-heading">
+  <a href="#setup-containerized-with-docker" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Setup (Containerized with Docker)
+</h2>
+
+<ol>
+<li><p>Move into banking directory</p>
+</li>
+<li><p>Run docker-compose</p>
+</li>
+</ol>
+<pre><code class="shell">$ docker-compose build
+$ docker-compose up</code></pre>
+<ol start="3">
+<li>Application are running on localhost:4000
+</li>
+</ol>
+<h2 id="tests" class="section-heading">
+  <a href="#tests" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Tests
+</h2>
+
+<ol>
+<li>Create database
+</li>
+</ol>
+<pre><code class="shell">$ MIX_ENV=test mix ecto.create
+$ MIX_ENV=test mix ecto.migrate</code></pre>
+<ol start="2">
+<li>Execute the test
+</li>
+</ol>
+<pre><code class="shell">$ mix test</code></pre>
+<h3 id="static-analysis-tool" class="section-heading">
+  <a href="#static-analysis-tool" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Static analysis tool
+</h3>
+
+<p><a href="http://erlang.org/doc/man/dialyzer.html">Dialyzer</a> Dialyzer is a static analysis tool that identifies software discrepancies
+<a href="https://github.com/jeremyjh/dialyxir">Dialyxir</a></p>
+<pre><code class="Shell">$ mix dialyzer</code></pre>
+<h3 id="static-code-analysis" class="section-heading">
+  <a href="#static-code-analysis" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Static code analysis
+</h3>
+
+<p><a href="https://github.com/rrrene/credo">Credo</a> Credo is a static code analysis tool for the Elixir language with a focus on teaching and code consistency.                                         </p>
+<pre><code class="Shell">$ mix credo</code></pre>
+<h3 id="generating-docs-locally" class="section-heading">
+  <a href="#generating-docs-locally" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Generating Docs Locally
+</h3>
+
+<ol>
+<li><p>Move into banking directory</p>
+</li>
+<li><p>Run </p>
+</li>
+</ol>
+<pre><code class="shell">$ mix docs</code></pre>
+<ol start="3">
+<li>Html docs on <code class="inline">doc</code> folder
+</li>
+</ol>
+<h3 id="testing-the-routes" class="section-heading">
+  <a href="#testing-the-routes" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Testing the routes
+</h3>
+
+<p>see <code class="inline">API</code> Page</p>
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.3),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  
+  </body>
+</html>
+

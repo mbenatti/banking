@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.19.3">
+    <title>Model — banking vdev</title>
+    <link rel="stylesheet" href="dist/html-399e30b9b028e3059575.css" />
+    <script src="dist/sidebar_items-253b5ff8ba.js"></script>
+    <script async src="dist/html-399e30b9b028e3059575.js"></script>
+    
+  </head>
+  <body data-type="extras">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+<div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  <a href="https://github.com/mbenatti/" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+banking      </h1>
+      <h2 class="sidebar-projectVersion">
+        vdev
+      </h2>
+    </div>
+      <img src="assets/logo.png" alt="banking" class="sidebar-projectImage">
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+<h1>Model</h1>
+<p>The <code class="inline">Model</code> has the purpose to handle the Database operations, validations on Schema and handle of changes on the balance.
+Uses the <a href="https://hexdocs.pm/ecto/Ecto.html">Ecto</a>, <a href="https://hexdocs.pm/ecto_sql/Ecto.Adapters.SQL.html">Ecto_SQL</a> and <a href="https://hex.pm/packages/postgrex">Postgrex</a> to integrate with database</p>
+<h2 id="structure" class="section-heading">
+  <a href="#structure" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Structure
+</h2>
+
+<p>The Directories and Modules structures is based on <a href="https://github.com/MicrosoftDocs/architecture-center/blob/master/docs/patterns/cqrs.md">Command and Query Responsibility Segregation (CQRS) pattern</a>, 
+It has modules for each context (Accounts, Balance Events and trade):</p>
+<ul>
+<li><code class="inline">_schema</code> module´s: Consist on Schema definition, mapping a Database Table, also contains the changeset, a set of validations and data transformation to work with the schema data
+</li>
+<li><code class="inline">_queries</code> module´s: The <a href="https://hexdocs.pm/ecto/3.0.7/Ecto.html"><code class="inline">Ecto</code></a> or non <a href="https://hexdocs.pm/ecto/3.0.7/Ecto.html"><code class="inline">Ecto</code></a> Queries for Loader and Mutator
+</li>
+<li><code class="inline">_loader</code> module´s: Read operations
+</li>
+<li><code class="inline">_mutator</code> module´s: Write and Update operations
+</li>
+</ul>
+<h2 id="database-model" class="section-heading">
+  <a href="#database-model" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Database Model
+</h2>
+
+<p><img src="assets/database.png" alt="alt text" title="Title"/></p>
+<h2 id="account" class="section-heading">
+  <a href="#account" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Account
+</h2>
+
+<p>The account schema represents the user Account
+it has a encrypted <code class="inline">password</code> powered by <a href="https://hexdocs.pm/comeonin/5.1.1/Comeonin.html"><code class="inline">Comeonin</code></a>, a unique <code class="inline">email</code>(username) and <code class="inline">name</code></p>
+<p>see <a href="Banking.Model.Accounts.AccountSchema.html"><code class="inline">Banking.Model.Accounts.AccountSchema</code></a></p>
+<h2 id="balance-event" class="section-heading">
+  <a href="#balance-event" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Balance Event
+</h2>
+
+<p>Represents the balance of an Account, each event(balance change) generates a new <a href="Banking.Model.Balances.EventSchema.html"><code class="inline">Banking.Model.Balances.EventSchema</code></a> with the <code class="inline">balance</code> and the history is registered by the <code class="inline">parent</code> field
+there are four types of event´s <code class="inline">Deposit</code>, <code class="inline">Withdrawal</code>, <code class="inline">TransferIssued</code>, <code class="inline">TransferReceived</code></p>
+<ul>
+<li>The <code class="inline">balance</code>, <code class="inline">quantity_moved</code> and <code class="inline">Type</code>
+</li>
+</ul>
+<p>These fields are part crucial of the Banking, inside the changeset they are used to calculate the new balance and the <code class="inline">sign</code> of the quantity.
+<strong>You can&#39;t set the balance by yourself</strong>, the balance is calculate dynamically using the <code class="inline">type</code> and <code class="inline">quantity_moved</code></p>
+<p>for more information see <a href="Banking.Model.Balances.EventSchema.html"><code class="inline">Banking.Model.Balances.EventSchema</code></a></p>
+<h2 id="trade" class="section-heading">
+  <a href="#trade" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Trade
+</h2>
+
+<p>Register the transactions for an Account, the main purpose of this is to have a connection between the account that issue the operation and the account received(also know as <code class="inline">transfer_account</code> on <a href="Banking.Model.Trades.TradeSchema.html"><code class="inline">Banking.Model.Trades.TradeSchema</code></a>)
+Each operation register an Trade, and if there&#39;s operation between two accounts, will be created two <a href="Banking.Model.Trades.TradeSchema.html"><code class="inline">Banking.Model.Trades.TradeSchema</code></a></p>
+<p>see <a href="Banking.Model.Trades.TradeSchema.html"><code class="inline">Banking.Model.Trades.TradeSchema</code></a></p>
+<h3 id="main-dependencies" class="section-heading">
+  <a href="#main-dependencies" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Main Dependencies
+</h3>
+
+<h4>Decimal (For balances and quantities)</h4>
+<p><a href="https://hexdocs.pm/decimal/1.7.0/Decimal.html"><code class="inline">Decimal</code></a> is used to represent the <code class="inline">quantity</code> and <code class="inline">balance</code>, these fields are based on <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO_4217</a>
+created using data types DECIMAL(19,4)</p>
+<h4>comeonin</h4>
+<p><a href="https://hexdocs.pm/comeonin/5.1.1/Comeonin.html">Comeonin</a> is a specification for password hashing libraries and is used for <code class="inline">password</code> hash on <a href="Banking.Model.Accounts.AccountSchema.html"><code class="inline">Banking.Model.Accounts.AccountSchema</code></a></p>
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.3),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  
+  </body>
+</html>
+
