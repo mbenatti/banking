@@ -13,17 +13,17 @@ with [Phoenix](https://phoenixframework.org/) providing the Rest API structure a
 
 ## Features
 
-* Authentication 
-* Account Operations
-		* Account Creation
-		* Deposit, Withdrawal and Transference between accounts
-		* Statement and Balance
-* Back Office Operations
-		* Daily, Monthly, Yearly and Total report (for Back Office)
-* Email service integration
-* Error and Logging service integration
-* Continuous Integration
-* Docker image for development
+1. Authentication 
+2. Account Operations
+	* Account Creation
+	* Deposit, Withdrawal and Transference between accounts
+	* Statement and Balance
+3. Back Office Operations
+	* Daily, Monthly, Yearly and Total report (for Back Office)
+4. Email service integration
+5. Error and Logging service integration
+6. Continuous Integration
+7. Docker image for development
 
 ## Requirements
 
