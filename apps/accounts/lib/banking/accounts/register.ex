@@ -1,6 +1,6 @@
 defmodule Banking.Accounts.Register do
   @moduledoc """
-  Responsible for business logic regarded Account registration
+  Responsible for business logic of Account registration
   """
 
   alias Banking.Accounts.Transactions.Deposit

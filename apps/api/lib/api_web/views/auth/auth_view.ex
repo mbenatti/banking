@@ -1,4 +1,5 @@
 defmodule Banking.APIWeb.AuthView do
+  @moduledoc false
   use Banking.APIWeb, :view
 
   def render("show.json", %{token: token}) do

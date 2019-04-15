@@ -1,17 +1,17 @@
 defmodule Banking.Accounts.Transactions.Transfer do
   @moduledoc """
-  Do the transaction between bank account`s
+  Do the transaction between bank account's
 
-  The transfer creates and debit on account that issue the transfer and a credit on a account receiving the transfer.
+  The transfer creates a debit on a bank account that issue the transfer and a credit on a account receiving the transfer.
 
-  Each Transfer create an `t:Banking.Model.Balances.EventSchema.t/0` of `Type.TransferIssued` and `Type.TransferReceived`
+  Each Transfer create a `t:Banking.Model.Balances.EventSchema.t/0` of `Type.TransferIssued` and `Type.TransferReceived`
   depending of the side and Update the balance on changeset according with the Last Balance Event, this occurs on Both
   sides on a transference.
 
-  The not allow negative Balance on debiting an account and wil return an {:error, changeset} and all
+  Is not allowed negative Balance on debiting an account and wil return an {:error, changeset} and all
   operations(inside a transaction) will be rollback from database.
 
-  see `create/2`
+  see `create/3`
   """
 
   alias Banking.Model.Balances.EventMutator
@@ -24,15 +24,16 @@ defmodule Banking.Accounts.Transactions.Transfer do
   @doc """
   Build and write the Transfer on Database between two accounts,
 
-  This is the unique way to create a Transference, this function create and `t:Banking.Model.Balances.EventSchema.t/0`
+  This is the unique way to create a Transference, this function create a `t:Banking.Model.Balances.EventSchema.t/0`
   and `t:Banking.Model.Trades.TradesSchema.t/0` representing Trade on Account, on both sides
 
-  The `account_id` is provided by the Auth System and shouldn`t have be provided in other way
+  The `account_id` is provided by the Auth System and shouldn't have be provided in other way
 
-  ## Params
-      account_id: Value representing the account ID to issue the transfer
-      account_transfer_email: String representing the account receiving the transference.
-      amount: Decimal amount of transference
+  ## Parameters
+
+      - account_id: Value representing the account ID to issue the transfer
+      - account_transfer_email: String representing the account receiving the transference.
+      - amount: Decimal amount of transference
   """
   @spec create(Integer.t(), String.t(), Decimal.t()) ::
           {:ok, {TradeSchema.t(), TradeSchema.t()}} | {:error, Changeset.t()}

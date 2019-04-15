@@ -6,8 +6,9 @@ defmodule Banking.Accounts.Utils do
   @doc """
   Parse giving string to decimal representing the money
 
-  Valid`s inputs: ´1.000,00´, ´1000´, ´1000,00´
-  Invalid`s: ´R$1000`, ´1000.00´
+  Valid's inputs: `1.000,00`, `1000`, `1000,00`.
+
+  Invalid's: `R$1000`, `1000.00`.
 
   ## Examples
 

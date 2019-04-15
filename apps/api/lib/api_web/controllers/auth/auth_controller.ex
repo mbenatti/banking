@@ -1,4 +1,10 @@
 defmodule Banking.APIWeb.AuthController do
+  @moduledoc """
+  Authenticate an user
+
+  see `create/2`
+  """
+
   use Banking.APIWeb, :controller
 
   alias Banking.Accounts.Auth
@@ -11,8 +17,8 @@ defmodule Banking.APIWeb.AuthController do
 
   ## Parameters
 
-    -- conn: The connection
-    -- params: The params provided by user containing the username(email) and password
+      - conn: The connection
+      - params: The params provided by user containing the username(email) and password
   """
   @spec create(Conn.t(), Map.t()) :: Plug.Conn.t()
   def create(conn, %{"username" => username, "password" => password}) do

@@ -16,7 +16,7 @@ defmodule Banking.Email.WithdrawalEmail do
   @doc """
   Build an email and delivery
 
-  The email will be "delivered later" and do not block the current process
+  The email will be "delivered later" and does not block the current process
 
   ## Examples
 
@@ -29,10 +29,10 @@ defmodule Banking.Email.WithdrawalEmail do
        cc: [],
        from: {nil, "no-reply@banking-dev.com"},
        headers: %{},
-       html_body: "<strong>Your withdrawal of 1000 are being processed.\n</strong>",
+       html_body: "<strong>Your withdrawal of 1000 are being processed.</strong>",
        private: %{},
        subject: "Withdrawal Request.",
-       text_body: "Your withdrawal of 1000 are being processed.\n",
+       text_body: "Your withdrawal of 1000 are being processed.",
        to: [nil: "marcos@gmail.com"]
       }}
 

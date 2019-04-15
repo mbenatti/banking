@@ -1,4 +1,5 @@
 defmodule Banking.APIWeb.Router do
+  @moduledoc false
   use Banking.APIWeb, :router
 
   pipeline :api do

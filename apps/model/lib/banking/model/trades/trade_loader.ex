@@ -112,21 +112,23 @@ defmodule Banking.Model.Trades.TradeLoader do
   @doc """
   Get an report of all trades grouped by day
 
-  iex> TradeLoader.get_report_by_day()
-  [%{
-    day_date: ~N[2019-04-06 00:00:00.000000],
-    deposit_amount: #Decimal<240000.0000>,
-    transfer_issued_amount: #Decimal<-21000.0000>,
-    transfer_received_amount: #Decimal<21000.0000>,
-    withdrawal_amount: #Decimal<-151000.0000>
-  },
-  %{
-    day_date: ~N[2019-04-07 00:00:00.000000],
-    deposit_amount: #Decimal<240000.0000>,
-    transfer_issued_amount: #Decimal<-21000.0000>,
-    transfer_received_amount: #Decimal<21000.0000>,
-    withdrawal_amount: #Decimal<-151000.0000>
-  }]
+  ## Examples
+
+      iex> TradeLoader.get_report_by_day()
+      [%{
+        day_date: ~N[2019-04-06 00:00:00.000000],
+        deposit_amount: #Decimal<240000.0000>,
+        transfer_issued_amount: #Decimal<-21000.0000>,
+        transfer_received_amount: #Decimal<21000.0000>,
+        withdrawal_amount: #Decimal<-151000.0000>
+      },
+      %{
+        day_date: ~N[2019-04-07 00:00:00.000000],
+        deposit_amount: #Decimal<240000.0000>,
+        transfer_issued_amount: #Decimal<-21000.0000>,
+        transfer_received_amount: #Decimal<21000.0000>,
+        withdrawal_amount: #Decimal<-151000.0000>
+      }]
   """
   @spec get_report_by_day() :: [TradeLoader.t_day_report()] | []
   def get_report_by_day() do
@@ -137,21 +139,23 @@ defmodule Banking.Model.Trades.TradeLoader do
   @doc """
   Get an report of all trades grouped by month
 
-  iex> TradeLoader.get_report_by_month()
-  [%{
-    month_date: ~N[2019-04-01 00:00:00.000000],
-    deposit_amount: #Decimal<240000.0000>,
-    transfer_issued_amount: #Decimal<-21000.0000>,
-    transfer_received_amount: #Decimal<21000.0000>,
-    withdrawal_amount: #Decimal<-151000.0000>
-  },
-  %{
-    month_date: ~N[2019-03-01 00:00:00.000000],
-    deposit_amount: #Decimal<240000.0000>,
-    transfer_issued_amount: #Decimal<-21000.0000>,
-    transfer_received_amount: #Decimal<21000.0000>,
-    withdrawal_amount: #Decimal<-151000.0000>
-  }]
+  ## Examples
+
+      iex> TradeLoader.get_report_by_month()
+      [%{
+        month_date: ~N[2019-04-01 00:00:00.000000],
+        deposit_amount: #Decimal<240000.0000>,
+        transfer_issued_amount: #Decimal<-21000.0000>,
+        transfer_received_amount: #Decimal<21000.0000>,
+        withdrawal_amount: #Decimal<-151000.0000>
+      },
+      %{
+        month_date: ~N[2019-03-01 00:00:00.000000],
+        deposit_amount: #Decimal<240000.0000>,
+        transfer_issued_amount: #Decimal<-21000.0000>,
+        transfer_received_amount: #Decimal<21000.0000>,
+        withdrawal_amount: #Decimal<-151000.0000>
+      }]
   """
   @spec get_report_by_month() :: [TradeLoader.t_month_report()] | []
   def get_report_by_month() do
@@ -162,21 +166,23 @@ defmodule Banking.Model.Trades.TradeLoader do
   @doc """
   Get an report of all trades grouped by year
 
-  iex> TradeLoader.get_report_by_year()
-    [%{
-    year_date: ~N[2019-01-01 00:00:00.000000],
-    deposit_amount: #Decimal<240000.0000>,
-    transfer_issued_amount: #Decimal<-21000.0000>,
-    transfer_received_amount: #Decimal<21000.0000>,
-    withdrawal_amount: #Decimal<-151000.0000>
-  },
-  %{
-    year_date: ~N[2018-01-01 00:00:00.000000],
-    deposit_amount: #Decimal<240000.0000>,
-    transfer_issued_amount: #Decimal<-21000.0000>,
-    transfer_received_amount: #Decimal<21000.0000>,
-    withdrawal_amount: #Decimal<-151000.0000>
-  }]
+  ## Examples
+
+      iex> TradeLoader.get_report_by_year()
+        [%{
+        year_date: ~N[2019-01-01 00:00:00.000000],
+        deposit_amount: #Decimal<240000.0000>,
+        transfer_issued_amount: #Decimal<-21000.0000>,
+        transfer_received_amount: #Decimal<21000.0000>,
+        withdrawal_amount: #Decimal<-151000.0000>
+      },
+      %{
+        year_date: ~N[2018-01-01 00:00:00.000000],
+        deposit_amount: #Decimal<240000.0000>,
+        transfer_issued_amount: #Decimal<-21000.0000>,
+        transfer_received_amount: #Decimal<21000.0000>,
+        withdrawal_amount: #Decimal<-151000.0000>
+      }]
   """
   @spec get_report_by_year() :: [TradeLoader.t_year_report()] | []
   def get_report_by_year() do

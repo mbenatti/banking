@@ -20,7 +20,7 @@ defmodule Banking.Accounts.Transactions.Statement do
 
   ## Examples
 
-      iex(14)> Statement.get(4)
+      iex> Statement.get(4)
       [
       %{
         balance: #Decimal<100.0000>,
@@ -100,11 +100,11 @@ defmodule Banking.Accounts.Transactions.Statement do
 
   ## Examples
 
-  iex> Statement.get_balance 5
-  %{balance: #Decimal<0>}
+      iex> Statement.get_balance 5
+      %{balance: #Decimal<0>}
 
-  iex> Statement.get_balance 4
-  %{balance: #Decimal<3000.0000>}
+      iex> Statement.get_balance 4
+      %{balance: #Decimal<3000.0000>}
 
   """
   @spec get_balance(String.t()) :: Map.t()

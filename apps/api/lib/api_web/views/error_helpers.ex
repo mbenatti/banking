@@ -1,7 +1,5 @@
 defmodule Banking.APIWeb.ErrorHelpers do
-  @moduledoc """
-  Conveniences for translating and building error messages.
-  """
+  @moduledoc false
 
   alias Ecto.Changeset
 

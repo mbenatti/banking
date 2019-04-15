@@ -17,8 +17,8 @@ defmodule Banking.APIWeb.AccountController do
 
   ## Parameters
 
-    -- conn: The connection
-    -- params: The params provided by user containing the name, username(email) and password
+      - conn: The connection
+      - params: The params provided by user containing the name, username(email) and password
   """
   @spec create(Conn.t(), Map.t()) :: Plug.Conn.t()
   def create(conn, %{} = params) do

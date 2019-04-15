@@ -1,4 +1,5 @@
 defmodule Banking.APIWeb.ErrorView do
+  @moduledoc false
   use Banking.APIWeb, :view
 
   # If you want to customize a particular status code

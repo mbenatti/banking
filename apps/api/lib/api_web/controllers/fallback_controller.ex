@@ -1,9 +1,12 @@
 defmodule Banking.APIWeb.FallbackController do
+  @moduledoc false
+
   use Phoenix.Controller
 
   alias Banking.APIWeb.AuthView
   alias Banking.APIWeb.ErrorView
 
+  @doc false
   def call(conn, {:error, %Ecto.Changeset{} = changeset}) do
     conn
     |> put_status(:unprocessable_entity)

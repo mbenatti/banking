@@ -7,6 +7,12 @@ defmodule Banking.Model.Enums.BankOperationEnum do
 
   use EnumType
 
+  @typedoc """
+  Bank Operations
+
+  Valid values are: `Type.Deposit`, `Type.Withdrawal` `Type.TransferIssued` `Type.TransferReceived`
+  or "DEPOSIT", "WITHDRAWAL", "TRANSFER_ISSUED", "TRANSFER_RECEIVED"
+  """
   @type t :: String.t()
 
   defenum Type do

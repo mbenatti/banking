@@ -5,7 +5,7 @@ defmodule Banking.Model.Trades.TradeSchema do
   The trade is each Trade event, like Deposit, Withdrawal, Transfer received and issued
   and is backed on `t:Banking.Model.Balances.EventSchema.t/0`.
 
-  The fields `type`, `balance`, `quantity` are virtual`s field, necessary to build the reports, loaded from `balance_event`
+  The fields `type`, `balance`, `quantity` are virtual's field, necessary to build the reports, loaded from `balance_event`
   """
 
   use Ecto.Schema
@@ -40,7 +40,7 @@ defmodule Banking.Model.Trades.TradeSchema do
   The changeset for `t:t/0`
 
   The values are created based on Balance Event, the `event_type` param is the `:type` on `t:Banking.Model.Balances.EventSchema.t/0`
-  and is used to support the transfer_account_id validation (required or not)
+  and is used to support the `transfer_account_id` validation (that may be required or not, depending of the type of transaction)
 
   ## Examples
 

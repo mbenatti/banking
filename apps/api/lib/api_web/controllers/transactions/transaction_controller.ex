@@ -1,6 +1,6 @@
 defmodule Banking.APIWeb.TransactionController do
   @moduledoc """
-  Routes implementation for Bank Account Transaction`s
+  Routes implementation for Bank Account Transaction's
 
   All Operations are executed on a private/logged API, so the Account `id` are in the connection.
   Contains five operations, and two main groups of operation:
@@ -10,11 +10,12 @@ defmodule Banking.APIWeb.TransactionController do
   - Withdrawal (see `withdrawal/2`)
   - Transfer (see `transfer/2`)
 
-  Bank Account statement`s:
+  Bank Account statement's:
   - Bank Account Statement (see `statement/2`)
-  - Bank Account Balance (see `balance`2)
+  - Bank Account Balance (see `balance/2`)
 
-  Money format accepted in BRL format, examples: ´1.000,00´ or `1000` or `1000,00`
+  Money format accepted in BRL format, examples: `1.000,00` or `1000` or `1000,00`
+
   Wrong way: Using dot as pennies `1000.00` Will be parsed as: `100.000,00`(Representing BRL format)
 
   """
@@ -38,8 +39,8 @@ defmodule Banking.APIWeb.TransactionController do
 
   ## Parameters
 
-    -- conn: The connection
-    -- params: The params provided by user containing the `amount` to be deposited
+      - conn: The connection
+      - params: The params provided by user containing the `amount` to be deposited
   """
   @spec deposit(Conn.t(), Map.t()) :: Plug.Conn.t()
   def deposit(conn, %{"amount" => amount}) do
@@ -65,8 +66,8 @@ defmodule Banking.APIWeb.TransactionController do
 
   ## Parameters
 
-    -- conn: The connection
-    -- params: The params provided by user containing the `amount` to be withdrawal
+      - conn: The connection
+      - params: The params provided by user containing the `amount` to be withdrawal
   """
   @spec withdrawal(Conn.t(), Map.t()) :: Plug.Conn.t()
   def withdrawal(conn, %{"amount" => amount}) do
@@ -92,8 +93,8 @@ defmodule Banking.APIWeb.TransactionController do
 
   ## Parameters
 
-    -- conn: The connection
-    -- params: The params provided by user containing the `amount` to be withdrawal
+      - conn: The connection
+      - params: The params provided by user containing the `amount` to be withdrawal
   """
   @spec transfer(Conn.t(), Map.t()) :: Plug.Conn.t()
   def transfer(conn, %{"username" => username, "amount" => amount}) do
@@ -116,8 +117,8 @@ defmodule Banking.APIWeb.TransactionController do
 
   ## Parameters
 
-    -- conn: The connection
-    -- params: empty
+      - conn: The connection
+      - params: empty
   """
   @spec balance(Conn.t(), Map.t()) :: Plug.Conn.t()
   def balance(conn, _) do
@@ -137,8 +138,8 @@ defmodule Banking.APIWeb.TransactionController do
 
   ## Parameters
 
-    -- conn: The connection
-    -- params: empty
+      - conn: The connection
+      - params: empty
   """
   @spec statement(Conn.t(), Map.t()) :: Plug.Conn.t()
   def statement(conn, _) do

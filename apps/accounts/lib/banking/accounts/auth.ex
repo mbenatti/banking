@@ -1,6 +1,6 @@
 defmodule Banking.Accounts.Auth do
   @moduledoc """
-  Responsible for authentications operation`s
+  Responsible for authentications operation's
   """
 
   alias Banking.Model.Accounts.{AccountLoader, AccountSchema}

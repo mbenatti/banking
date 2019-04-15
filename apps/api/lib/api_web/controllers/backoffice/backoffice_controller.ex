@@ -2,7 +2,7 @@ defmodule Banking.APIWeb.BackofficeController do
   @moduledoc """
   The controller containing the Backoffice operations
 
-  The operation`s are executed by a logged user/pass using basic_auth.
+  The operation's are executed by a logged user/pass using basic_auth.
 
   There are four types of reports
 
@@ -21,7 +21,7 @@ defmodule Banking.APIWeb.BackofficeController do
   @doc """
   Get Daily reports
 
-  The report will be generated as json with a list of withdrawal`s, deposit`s and transference`s
+  The report will be generated as json with a list of withdrawal's, deposit's and transference's
   issued and received, grouped by Day, and the date representing the day.
 
   see `Banking.Backoffice.Reports.daily/0`
@@ -36,7 +36,7 @@ defmodule Banking.APIWeb.BackofficeController do
   @doc """
   Get Monthly reports
 
-  The report will be generated as json with a list of withdrawal`s, deposit`s and transference`s
+  The report will be generated as json with a list of withdrawal's, deposit's and transference's
   issued and received, grouped by Month, and the date representing the Month.
 
   see `Banking.Backoffice.Reports.monthly/0`
@@ -51,7 +51,7 @@ defmodule Banking.APIWeb.BackofficeController do
   @doc """
   Get Yearly reports
 
-  The report will be generated as json with a list of withdrawal`s, deposit`s and transference`s
+  The report will be generated as json with a list of withdrawal's, deposit's and transference's
   issued and received, grouped by Year, and the date representing the year.
 
   see `Banking.Backoffice.Reports.yearly/0`
@@ -66,7 +66,7 @@ defmodule Banking.APIWeb.BackofficeController do
   @doc """
   Get Total Report
 
-  The report will be generated as json with withdrawal`s, deposit`s and transference`s
+  The report will be generated as json with withdrawal's, deposit's and transference's
   issued and received, the total sum of these operations.
 
   see `Banking.Backoffice.Reports.total/0`

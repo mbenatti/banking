@@ -1,4 +1,5 @@
 defmodule Banking.APIWeb.TransactionView do
+  @moduledoc false
   use Banking.APIWeb, :view
 
   alias Banking.Model.Enums.BankOperationEnum.Type

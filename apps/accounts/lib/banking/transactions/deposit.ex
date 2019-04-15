@@ -15,16 +15,18 @@ defmodule Banking.Accounts.Transactions.Deposit do
   alias Banking.Model.Repo
 
   @doc """
-  Build and write The Deposit on Database,
+  Build and write a Deposit operation on Database
 
-  This is the unique way to create an Deposit, this function create and `t:Banking.Model.Balances.EventSchema.t/0`
+  This is the unique way to create a Deposit, this function creates a `t:Banking.Model.Balances.EventSchema.t/0`
   and `t:Banking.Model.Trades.TradesSchema.t/0` representing Trade on Account.
 
-  The `account_id` is provided by the Auth System and shouldn`t have be provided in other way
+  The `account_id` is provided by the Auth System and shouldn't have be provided in other way.
 
-  ## Params
-      account_id: Value representing the account ID
-      amount: Decimal amount of deposit
+  ## Parameters
+
+      - account_id: Value representing the account ID.
+      - amount: Decimal amount of deposit.
+
   """
   @spec create(String.t(), Decimal.t()) :: {:ok, TradeSchema.t()} | {:error, Changeset.t()}
   def create(account_id, amount) do
