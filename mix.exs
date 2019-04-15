@@ -20,7 +20,7 @@ defmodule Banking.MixProject do
       homepage_url: "https://github.com/mbenatti/",
       docs: [
         # The main page in the docs
-        main: "overview",
+        main: "readme",
         logo: "assets/bank.png",
         assets: "assets",
         extras: [
