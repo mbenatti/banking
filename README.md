@@ -69,6 +69,10 @@ The project was created using umbrella and consist into 5 apps with distinct's f
 
 	The Rest API, it calls functions from Accounts and Backoffice apps and not deal directly with Model or Email
 	
+### Online docs
+
+- Documentations can be found at [Docs](https://mbenatti.github.io/banking/readme.html)
+
 ## Unit Tests
 
 The test's are made using [Ex_Unit](https://hexdocs.pm/ex_unit/ExUnit.html), also useful libraries like `Faker` and `ExMachina`
