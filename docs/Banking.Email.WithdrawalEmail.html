@@ -128,21 +128,21 @@ Functions          </h1>
   Examples
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">Banking.Email.WithdrawalEmail</span><span class="o">.</span><span class="n">email</span><span class="p" data-group-id="2902346873-1">(</span><span class="s">&quot;marcos@gmail.com&quot;</span><span class="p">,</span><span class="s">&quot;1000&quot;</span><span class="p" data-group-id="2902346873-1">)</span><span class="w">
-</span><span class="p" data-group-id="2902346873-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="2902346873-3">%</span><span class="nc" data-group-id="2902346873-3">Bamboo.Email</span><span class="p" data-group-id="2902346873-3">{</span><span class="w">
- </span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2902346873-4">%{</span><span class="p" data-group-id="2902346873-4">}</span><span class="p">,</span><span class="w">
- </span><span class="ss">attachments</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2902346873-5">[</span><span class="p" data-group-id="2902346873-5">]</span><span class="p">,</span><span class="w">
- </span><span class="ss">bcc</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2902346873-6">[</span><span class="p" data-group-id="2902346873-6">]</span><span class="p">,</span><span class="w">
- </span><span class="ss">cc</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2902346873-7">[</span><span class="p" data-group-id="2902346873-7">]</span><span class="p">,</span><span class="w">
- </span><span class="ss">from</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2902346873-8">{</span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;no-reply@banking-dev.com&quot;</span><span class="p" data-group-id="2902346873-8">}</span><span class="p">,</span><span class="w">
- </span><span class="ss">headers</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2902346873-9">%{</span><span class="p" data-group-id="2902346873-9">}</span><span class="p">,</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">Banking.Email.WithdrawalEmail</span><span class="o">.</span><span class="n">email</span><span class="p" data-group-id="4931428231-1">(</span><span class="s">&quot;marcos@gmail.com&quot;</span><span class="p">,</span><span class="s">&quot;1000&quot;</span><span class="p" data-group-id="4931428231-1">)</span><span class="w">
+</span><span class="p" data-group-id="4931428231-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="4931428231-3">%</span><span class="nc" data-group-id="4931428231-3">Bamboo.Email</span><span class="p" data-group-id="4931428231-3">{</span><span class="w">
+ </span><span class="ss">assigns</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4931428231-4">%{</span><span class="p" data-group-id="4931428231-4">}</span><span class="p">,</span><span class="w">
+ </span><span class="ss">attachments</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4931428231-5">[</span><span class="p" data-group-id="4931428231-5">]</span><span class="p">,</span><span class="w">
+ </span><span class="ss">bcc</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4931428231-6">[</span><span class="p" data-group-id="4931428231-6">]</span><span class="p">,</span><span class="w">
+ </span><span class="ss">cc</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4931428231-7">[</span><span class="p" data-group-id="4931428231-7">]</span><span class="p">,</span><span class="w">
+ </span><span class="ss">from</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4931428231-8">{</span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;no-reply@banking-dev.com&quot;</span><span class="p" data-group-id="4931428231-8">}</span><span class="p">,</span><span class="w">
+ </span><span class="ss">headers</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4931428231-9">%{</span><span class="p" data-group-id="4931428231-9">}</span><span class="p">,</span><span class="w">
  </span><span class="ss">html_body</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;strong&gt;Your withdrawal of 1000 are being processed.&lt;/strong&gt;&quot;</span><span class="p">,</span><span class="w">
- </span><span class="ss">private</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2902346873-10">%{</span><span class="p" data-group-id="2902346873-10">}</span><span class="p">,</span><span class="w">
+ </span><span class="ss">private</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4931428231-10">%{</span><span class="p" data-group-id="4931428231-10">}</span><span class="p">,</span><span class="w">
  </span><span class="ss">subject</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Withdrawal Request.&quot;</span><span class="p">,</span><span class="w">
  </span><span class="ss">text_body</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Your withdrawal of 1000 are being processed.&quot;</span><span class="p">,</span><span class="w">
- </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2902346873-11">[</span><span class="ss">nil</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;marcos@gmail.com&quot;</span><span class="p" data-group-id="2902346873-11">]</span><span class="w">
-</span><span class="p" data-group-id="2902346873-3">}</span><span class="p" data-group-id="2902346873-2">}</span></code></pre>
+ </span><span class="ss">to</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4931428231-11">[</span><span class="ss">nil</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;marcos@gmail.com&quot;</span><span class="p" data-group-id="4931428231-11">]</span><span class="w">
+</span><span class="p" data-group-id="4931428231-3">}</span><span class="p" data-group-id="4931428231-2">}</span></code></pre>
   </section>
 </section>
           </div>

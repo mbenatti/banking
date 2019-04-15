@@ -36,7 +36,7 @@ with [Phoenix](https://phoenixframework.org/) providing the Rest API structure a
 ## Main Dependencies
 
 - `Guardian` (for accounts) and `BasicAuth` (for backoffice) authentication
-- `Phoenix` for the `api` `api.md` `api.html`
+- `Phoenix` for the `api`
 - `Timber` for error and logging service
 - `Ecto` for database wrapper
 - `Bamboo` for email service
@@ -75,7 +75,7 @@ The project was created using umbrella and consist into 5 apps with distinct's f
 
 ## Unit Tests
 
-The test's are made using [Ex_Unit](https://hexdocs.pm/ex_unit/ExUnit.html), also useful libraries like `Faker` and `ExMachina`
+The test's are made using [Ex_Unit](https://hexdocs.pm/ex_unit/ExUnit.html), also using useful libraries like `Faker` and `ExMachina`
 
 ## Development tips / Setup
 
