@@ -1,7 +1,7 @@
 use Mix.Config
 
 config :logger,
-       backends: [Timber.LoggerBackends.HTTP]
+  backends: [Timber.LoggerBackends.HTTP]
 
 config :timber,
   api_key: Map.fetch!(System.get_env(), "TIMBER_API_KEY"),
